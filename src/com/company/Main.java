@@ -3,9 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
+        int n = 100;
+        System.out.println(factorialTail(n));
     }
-
     /*
     팩토리얼 꼬리 문제
     팩토리얼은 자연수 n에 대해 1부터 n까지 모든 숫자를 곱하는 것을 의미하며 n팩토리얼은 n!라고 표기합니다. 예를 들어 3!은 1 x 2 x 3 = ㅅ6입니다.
@@ -22,11 +22,26 @@ public class Main {
     10  2
     */
 
-    public int factorialTail() {
-
-
-        return 0;
+    // while문
+    public static int factorialTail(int n) {
+        int countZero = 0;
+        int i = 1;
+        while(n > i) {
+            i *= 5;
+            countZero += (int) (n / i);
+        }
+        return countZero;
     }
+
+    // for문
+    // 왜 안되는지 다시 봐야
+//    public static int factorialTail(int n) {
+//        int countZero = 0;
+//        for(int i = 5; i < n; i *= 5) {
+//            countZero += (int)(n / i);
+//        }
+//        return countZero;
+//    }
 
     /*
     최대 이윤 구하기
