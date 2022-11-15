@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        int n = 100;
+        int n = 25;
         System.out.println(factorialTail(n));
     }
     /*
@@ -23,25 +23,25 @@ public class Main {
     */
 
     // while문
-    public static int factorialTail(int n) {
-        int countZero = 0;
-        int i = 1;
-        while(n > i) {
-            i *= 5;
-            countZero += (int) (n / i);
-        }
-        return countZero;
-    }
-
-    // for문
-    // 왜 안되는지 다시 봐야
 //    public static int factorialTail(int n) {
 //        int countZero = 0;
-//        for(int i = 5; i < n; i *= 5) {
-//            countZero += (int)(n / i);
+//        int i = 1;
+//        while(n > i) {
+//            i *= 5;
+//            countZero += (int) (n / i);
 //        }
 //        return countZero;
 //    }
+
+    // for문
+    // 안되었던 이유 : 5로 나누고, 25로 나누고 해줘야 하는데 i < n 이었을때는 n이 5나 25일 경우 해당 값으로 나눠주지 못했어서
+    public static int factorialTail(int n) {
+        int countZero = 0;
+        for(int i = 5; i <= n; i *= 5) {
+            countZero += (int)(n / i);
+        }
+        return countZero;
+    }
 
     /*
     최대 이윤 구하기
